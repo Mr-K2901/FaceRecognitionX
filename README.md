@@ -24,14 +24,14 @@ All processing (video decoding, face detection, recognition, logging) runs on th
 ---
 
 ## Architecture
+
 ```mermaid
 graph TD
     A[ESP32-CAM] -- MJPEG Stream (WiFi) --> B[Python Client]
     C[Laptop Webcam] -- USB Feed --> B
-    B --> D[Frame Processing (OpenCV)]
-    D --> E{Face Recognition}
-    E -- Match Found --> F[Log to CSV]
-    E -- Unknown --> G[Ignore / Alert]
+    B --> D{Face Recognition}
+    D -- Match Found --> E[Log to CSV]
+    D -- Unknown --> F[Alert/Ignore]    E -- Unknown --> G[Ignore / Alert]
 ```
 
 ## How to run
