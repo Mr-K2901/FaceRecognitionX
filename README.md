@@ -23,6 +23,17 @@ All processing (video decoding, face detection, recognition, logging) runs on th
 
 ---
 
+## Architecture
+```mermaid
+graph TD
+    A[ESP32-CAM] -- MJPEG Stream (WiFi) --> B[Python Client]
+    C[Laptop Webcam] -- USB Feed --> B
+    B --> D[Frame Processing (OpenCV)]
+    D --> E{Face Recognition}
+    E -- Match Found --> F[Log to CSV]
+    E -- Unknown --> G[Ignore / Alert]
+```
+
 ## How to run
 
 ```bash
@@ -30,3 +41,5 @@ python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
 python src/main.py
+
+
