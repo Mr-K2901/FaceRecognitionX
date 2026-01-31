@@ -1,5 +1,10 @@
 # FaceRecognitionX
 
+A robust, dual-mode face recognition pipeline designed for IoT environments. It enables real-time identification using either a local webcam or a networked ESP32-CAM stream, featuring automatic failover and local data logging.
+
+![Project Status](https://img.shields.io/badge/status-active-brightgreen) ![Python](https://img.shields.io/badge/python-3.10-blue)
+
+
 Python-based face recognition system that works with:
 - Laptop webcam
 - ESP32-CAM (as IP camera)
