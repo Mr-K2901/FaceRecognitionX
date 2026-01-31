@@ -27,11 +27,12 @@ All processing (video decoding, face detection, recognition, logging) runs on th
 
 ```mermaid
 graph TD
-    A[ESP32-CAM] -- MJPEG Stream (WiFi) --> B[Python Client]
-    C[Laptop Webcam] -- USB Feed --> B
-    B --> D{Face Recognition}
-    D -- Match Found --> E[Log to CSV]
-    D -- Unknown --> F[Alert/Ignore]    E -- Unknown --> G[Ignore / Alert]
+    A["ESP32-CAM"] -- "MJPEG Stream (WiFi)" --> B["Python Client"]
+    C["Laptop Webcam"] -- "USB Feed" --> B
+    B --> D{"Face Recognition"}
+    D -- "Match Found" --> E["Log to CSV"]
+    D -- "Unknown" --> F["Alert / Ignore"]
+
 ```
 
 ## How to run
